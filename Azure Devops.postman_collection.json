@@ -1,0 +1,1807 @@
+{
+	"info": {
+		"_postman_id": "564e0bec-4184-4e51-9c87-f52058da2d5a",
+		"name": "Azure Devops",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Operations",
+			"item": [
+				{
+					"name": "API",
+					"request": {
+						"method": "OPTIONS",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/operations",
+							"protocol": "https",
+							"host": [
+								"{{AzureDevops.Host}}"
+							],
+							"path": [
+								"{{AzureDevops.Org}}",
+								"_apis",
+								"operations"
+							]
+						},
+						"description": "List all distributedtask APIs in Azure Devops."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Security",
+			"item": [
+				{
+					"name": "API",
+					"request": {
+						"method": "OPTIONS",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/Security",
+							"protocol": "https",
+							"host": [
+								"{{AzureDevops.Host}}"
+							],
+							"path": [
+								"{{AzureDevops.Org}}",
+								"_apis",
+								"Security"
+							]
+						},
+						"description": "List all distributedtask APIs in Azure Devops."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Distributed Task",
+			"item": [
+				{
+					"name": "Agent Pools",
+					"item": [
+						{
+							"name": "Pools",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json;api-version=5.0-preview.1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/distributedtask/pools?poolName=&poolType=",
+									"protocol": "https",
+									"host": [
+										"{{AzureDevops.Host}}"
+									],
+									"path": [
+										"{{AzureDevops.Org}}",
+										"_apis",
+										"distributedtask",
+										"pools"
+									],
+									"query": [
+										{
+											"key": "poolName",
+											"value": ""
+										},
+										{
+											"key": "poolType",
+											"value": "",
+											"description": "automation"
+										}
+									]
+								},
+								"description": "List all agent pools in the organization.\nRequires Agent Pools (Read) permission."
+							},
+							"response": []
+						},
+						{
+							"name": "Pool",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json;api-version=5.0-preview.1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/distributedtask/pools/:poolid",
+									"protocol": "https",
+									"host": [
+										"{{AzureDevops.Host}}"
+									],
+									"path": [
+										"{{AzureDevops.Org}}",
+										"_apis",
+										"distributedtask",
+										"pools",
+										":poolid"
+									],
+									"variable": [
+										{
+											"key": "poolid",
+											"value": "1"
+										}
+									]
+								},
+								"description": "Get a single agent pool, based on ID.\nRequires Agent Pools (Read) permission."
+							},
+							"response": []
+						},
+						{
+							"name": "Job Requests",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json;api-version=5.0-preview.1"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/distributedtask/pools/:poolid/jobrequests",
+									"protocol": "https",
+									"host": [
+										"{{AzureDevops.Host}}"
+									],
+									"path": [
+										"{{AzureDevops.Org}}",
+										"_apis",
+										"distributedtask",
+										"pools",
+										":poolid",
+										"jobrequests"
+									],
+									"variable": [
+										{
+											"key": "poolid",
+											"value": "1"
+										}
+									]
+								},
+								"description": "Get a single agent pool, based on ID.\nRequires Agent Pools (Read) permission."
+							},
+							"response": []
+						},
+						{
+							"name": "Agents",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json;api-version=5.0-preview.1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/distributedtask/pools/:poolid/agents?includeCapabilities=true&includeAssignedRequest=true&includeLastCompletedRequest=true",
+									"protocol": "https",
+									"host": [
+										"{{AzureDevops.Host}}"
+									],
+									"path": [
+										"{{AzureDevops.Org}}",
+										"_apis",
+										"distributedtask",
+										"pools",
+										":poolid",
+										"agents"
+									],
+									"query": [
+										{
+											"key": "includeCapabilities",
+											"value": "true"
+										},
+										{
+											"key": "includeAssignedRequest",
+											"value": "true"
+										},
+										{
+											"key": "includeLastCompletedRequest",
+											"value": "true"
+										}
+									],
+									"variable": [
+										{
+											"key": "poolid",
+											"value": "1"
+										}
+									]
+								},
+								"description": "List all agents in an agent pool.\nRequires Agent Pools (Read) permission."
+							},
+							"response": []
+						},
+						{
+							"name": "Agent",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json;api-version=5.0-preview.1",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/distributedtask/pools/:poolid/agents/:agentid?includeCapabilities=true&includeAssignedRequest=true&includeLastCompletedRequest=true",
+									"protocol": "https",
+									"host": [
+										"{{AzureDevops.Host}}"
+									],
+									"path": [
+										"{{AzureDevops.Org}}",
+										"_apis",
+										"distributedtask",
+										"pools",
+										":poolid",
+										"agents",
+										":agentid"
+									],
+									"query": [
+										{
+											"key": "includeCapabilities",
+											"value": "true"
+										},
+										{
+											"key": "includeAssignedRequest",
+											"value": "true"
+										},
+										{
+											"key": "includeLastCompletedRequest",
+											"value": "true"
+										}
+									],
+									"variable": [
+										{
+											"key": "poolid",
+											"value": "1"
+										},
+										{
+											"key": "agentid",
+											"value": "1"
+										}
+									]
+								},
+								"description": "Get a single agent in an agent pool.\nRequires Agent Pools (Read) permission."
+							},
+							"response": []
+						},
+						{
+							"name": "Add User Capabilities",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json;api-version=5.0-preview.1"
+									},
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"CustomCapability1\": \"Value\",\n\t\"CustomCapability2\": \"Value\"\n}"
+								},
+								"url": {
+									"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/distributedtask/pools/:poolid/agents/:agentid/usercapabilities",
+									"protocol": "https",
+									"host": [
+										"{{AzureDevops.Host}}"
+									],
+									"path": [
+										"{{AzureDevops.Org}}",
+										"_apis",
+										"distributedtask",
+										"pools",
+										":poolid",
+										"agents",
+										":agentid",
+										"usercapabilities"
+									],
+									"variable": [
+										{
+											"key": "poolid",
+											"value": "1"
+										},
+										{
+											"key": "agentid",
+											"value": "1"
+										}
+									]
+								},
+								"description": "Add custom capabilities to a pipeline agent.\nRequires Agent Pools (Read & Manage) permission."
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "f2cef1c4-068d-41a4-8106-dc673553c74d",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "9c8e4304-35fd-4a2a-b345-3fe4b9cfc4e8",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Queues",
+					"item": [
+						{
+							"name": "List",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json;api-version=5.0-preview.1"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/{{AzureDevops.Project}}/_apis/distributedtask/queues",
+									"protocol": "https",
+									"host": [
+										"{{AzureDevops.Host}}"
+									],
+									"path": [
+										"{{AzureDevops.Org}}",
+										"{{AzureDevops.Project}}",
+										"_apis",
+										"distributedtask",
+										"queues"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json;api-version=5.0-preview.1"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/{{AzureDevops.Project}}/_apis/distributedtask/queues/:queueid",
+									"protocol": "https",
+									"host": [
+										"{{AzureDevops.Host}}"
+									],
+									"path": [
+										"{{AzureDevops.Org}}",
+										"{{AzureDevops.Project}}",
+										"_apis",
+										"distributedtask",
+										"queues",
+										":queueid"
+									],
+									"variable": [
+										{
+											"key": "queueid",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "24539fc4-22d2-4412-a88b-4553fc3bb93c",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"id": "8da7f9f5-e56e-406c-a87f-a61cdad69d12",
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Tasks",
+					"item": [
+						{
+							"name": "List",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json;api-version=5.0-preview.1"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/distributedtask/tasks",
+									"protocol": "https",
+									"host": [
+										"{{AzureDevops.Host}}"
+									],
+									"path": [
+										"{{AzureDevops.Org}}",
+										"_apis",
+										"distributedtask",
+										"tasks"
+									]
+								},
+								"description": "List all pipeline tasks available to the organization.\nRequires Agent Pools (Read) permission."
+							},
+							"response": []
+						},
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json;api-version=5.0-preview.1"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/distributedtask/tasks/:taskid",
+									"protocol": "https",
+									"host": [
+										"{{AzureDevops.Host}}"
+									],
+									"path": [
+										"{{AzureDevops.Org}}",
+										"_apis",
+										"distributedtask",
+										"tasks",
+										":taskid"
+									],
+									"variable": [
+										{
+											"key": "taskid",
+											"value": "6c731c3c-3c68-459a-a5c9-bde6e6595b5b"
+										}
+									]
+								},
+								"description": "Get a pipeline task available to the organization.\nRequires Agent Pools (Read) permission."
+							},
+							"response": []
+						},
+						{
+							"name": "Get Specific Version",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json;api-version=5.0-preview.1"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/distributedtask/tasks/:taskid/:version",
+									"protocol": "https",
+									"host": [
+										"{{AzureDevops.Host}}"
+									],
+									"path": [
+										"{{AzureDevops.Org}}",
+										"_apis",
+										"distributedtask",
+										"tasks",
+										":taskid",
+										":version"
+									],
+									"variable": [
+										{
+											"key": "taskid",
+											"value": "6c731c3c-3c68-459a-a5c9-bde6e6595b5b"
+										},
+										{
+											"key": "version",
+											"value": "3.151.2"
+										}
+									]
+								},
+								"description": "Get a a specific version pipeline task available to the organization.\nRequires Agent Pools (Read) permission."
+							},
+							"response": []
+						},
+						{
+							"name": "Icon",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json;api-version=5.0-preview.1"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/distributedtask/tasks/:taskid/:version/icon",
+									"protocol": "https",
+									"host": [
+										"{{AzureDevops.Host}}"
+									],
+									"path": [
+										"{{AzureDevops.Org}}",
+										"_apis",
+										"distributedtask",
+										"tasks",
+										":taskid",
+										":version",
+										"icon"
+									],
+									"variable": [
+										{
+											"key": "taskid",
+											"value": "6c731c3c-3c68-459a-a5c9-bde6e6595b5b"
+										},
+										{
+											"key": "version",
+											"value": "3.151.2"
+										}
+									]
+								},
+								"description": "Get the icon of a pipeline task available to the organization.\nRequires Agent Pools (Read) permission."
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Agent Clouds",
+					"item": [
+						{
+							"name": "List",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json;api-version=5.0-preview.1"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/distributedtask/agentclouds",
+									"protocol": "https",
+									"host": [
+										"{{AzureDevops.Host}}"
+									],
+									"path": [
+										"{{AzureDevops.Org}}",
+										"_apis",
+										"distributedtask",
+										"agentclouds"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"type": "text",
+										"value": "application/json;api-version=5.0-preview.1"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/distributedtask/agentclouds/:agentcloudid",
+									"protocol": "https",
+									"host": [
+										"{{AzureDevops.Host}}"
+									],
+									"path": [
+										"{{AzureDevops.Org}}",
+										"_apis",
+										"distributedtask",
+										"agentclouds",
+										":agentcloudid"
+									],
+									"variable": [
+										{
+											"key": "agentcloudid",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "API",
+					"request": {
+						"method": "OPTIONS",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/distributedtask",
+							"protocol": "https",
+							"host": [
+								"{{AzureDevops.Host}}"
+							],
+							"path": [
+								"{{AzureDevops.Org}}",
+								"_apis",
+								"distributedtask"
+							]
+						},
+						"description": "List all distributedtask APIs in Azure Devops."
+					},
+					"response": []
+				},
+				{
+					"name": "YAML Schema",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json;api-version=5.0-preview.1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://d{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/distributedtask/yamlschema",
+							"protocol": "https",
+							"host": [
+								"d{{AzureDevops.Host}}"
+							],
+							"path": [
+								"{{AzureDevops.Org}}",
+								"_apis",
+								"distributedtask",
+								"yamlschema"
+							]
+						},
+						"description": "Get the YAML schema of pipelines."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ACS",
+			"item": [
+				{
+					"name": "API",
+					"request": {
+						"method": "OPTIONS",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/acs",
+							"protocol": "https",
+							"host": [
+								"{{AzureDevops.Host}}"
+							],
+							"path": [
+								"{{AzureDevops.Org}}",
+								"_apis",
+								"acs"
+							]
+						},
+						"description": "List all distributedtask APIs in Azure Devops."
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "96ecb165-64b6-4631-9765-78460cfbea66",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "14f1a3a6-d4b0-4635-a9ce-8460c2ad757e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Core",
+			"item": [
+				{
+					"name": "API",
+					"request": {
+						"method": "OPTIONS",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/core",
+							"protocol": "https",
+							"host": [
+								"{{AzureDevops.Host}}"
+							],
+							"path": [
+								"{{AzureDevops.Org}}",
+								"_apis",
+								"core"
+							]
+						},
+						"description": "List all distributedtask APIs in Azure Devops."
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "96ecb165-64b6-4631-9765-78460cfbea66",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "14f1a3a6-d4b0-4635-a9ce-8460c2ad757e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "SBS",
+			"item": [
+				{
+					"name": "API",
+					"request": {
+						"method": "OPTIONS",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/sbs",
+							"protocol": "https",
+							"host": [
+								"{{AzureDevops.Host}}"
+							],
+							"path": [
+								"{{AzureDevops.Org}}",
+								"_apis",
+								"sbs"
+							]
+						},
+						"description": "List all distributedtask APIs in Azure Devops."
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "96ecb165-64b6-4631-9765-78460cfbea66",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "14f1a3a6-d4b0-4635-a9ce-8460c2ad757e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Connected Service",
+			"item": [
+				{
+					"name": "API",
+					"request": {
+						"method": "OPTIONS",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/connectedService",
+							"protocol": "https",
+							"host": [
+								"{{AzureDevops.Host}}"
+							],
+							"path": [
+								"{{AzureDevops.Org}}",
+								"_apis",
+								"connectedService"
+							]
+						},
+						"description": "List all distributedtask APIs in Azure Devops."
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "96ecb165-64b6-4631-9765-78460cfbea66",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "14f1a3a6-d4b0-4635-a9ce-8460c2ad757e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Work",
+			"item": [
+				{
+					"name": "API",
+					"request": {
+						"method": "OPTIONS",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/work",
+							"protocol": "https",
+							"host": [
+								"{{AzureDevops.Host}}"
+							],
+							"path": [
+								"{{AzureDevops.Org}}",
+								"_apis",
+								"work"
+							]
+						},
+						"description": "List all distributedtask APIs in Azure Devops."
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "96ecb165-64b6-4631-9765-78460cfbea66",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "14f1a3a6-d4b0-4635-a9ce-8460c2ad757e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Build",
+			"item": [
+				{
+					"name": "API",
+					"request": {
+						"method": "OPTIONS",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/build",
+							"protocol": "https",
+							"host": [
+								"{{AzureDevops.Host}}"
+							],
+							"path": [
+								"{{AzureDevops.Org}}",
+								"_apis",
+								"build"
+							]
+						},
+						"description": "List all distributedtask APIs in Azure Devops."
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "96ecb165-64b6-4631-9765-78460cfbea66",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "14f1a3a6-d4b0-4635-a9ce-8460c2ad757e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Git",
+			"item": [
+				{
+					"name": "API",
+					"request": {
+						"method": "OPTIONS",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/git",
+							"protocol": "https",
+							"host": [
+								"{{AzureDevops.Host}}"
+							],
+							"path": [
+								"{{AzureDevops.Org}}",
+								"_apis",
+								"git"
+							]
+						},
+						"description": "List all distributedtask APIs in Azure Devops."
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "96ecb165-64b6-4631-9765-78460cfbea66",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "14f1a3a6-d4b0-4635-a9ce-8460c2ad757e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Wit",
+			"item": [
+				{
+					"name": "API",
+					"request": {
+						"method": "OPTIONS",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/wit",
+							"protocol": "https",
+							"host": [
+								"{{AzureDevops.Host}}"
+							],
+							"path": [
+								"{{AzureDevops.Org}}",
+								"_apis",
+								"wit"
+							]
+						},
+						"description": "List all distributedtask APIs in Azure Devops."
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "96ecb165-64b6-4631-9765-78460cfbea66",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "14f1a3a6-d4b0-4635-a9ce-8460c2ad757e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Test",
+			"item": [
+				{
+					"name": "API",
+					"request": {
+						"method": "OPTIONS",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/Test",
+							"protocol": "https",
+							"host": [
+								"{{AzureDevops.Host}}"
+							],
+							"path": [
+								"{{AzureDevops.Org}}",
+								"_apis",
+								"Test"
+							]
+						},
+						"description": "List all distributedtask APIs in Azure Devops."
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "96ecb165-64b6-4631-9765-78460cfbea66",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "14f1a3a6-d4b0-4635-a9ce-8460c2ad757e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Test Plan",
+			"item": [
+				{
+					"name": "API",
+					"request": {
+						"method": "OPTIONS",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/testplan",
+							"protocol": "https",
+							"host": [
+								"{{AzureDevops.Host}}"
+							],
+							"path": [
+								"{{AzureDevops.Org}}",
+								"_apis",
+								"testplan"
+							]
+						},
+						"description": "List all distributedtask APIs in Azure Devops."
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "96ecb165-64b6-4631-9765-78460cfbea66",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "14f1a3a6-d4b0-4635-a9ce-8460c2ad757e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Utilization",
+			"item": [
+				{
+					"name": "API",
+					"request": {
+						"method": "OPTIONS",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/Utilization",
+							"protocol": "https",
+							"host": [
+								"{{AzureDevops.Host}}"
+							],
+							"path": [
+								"{{AzureDevops.Org}}",
+								"_apis",
+								"Utilization"
+							]
+						},
+						"description": "List all distributedtask APIs in Azure Devops."
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "96ecb165-64b6-4631-9765-78460cfbea66",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "14f1a3a6-d4b0-4635-a9ce-8460c2ad757e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "TFVC",
+			"item": [
+				{
+					"name": "API",
+					"request": {
+						"method": "OPTIONS",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/tfvc",
+							"protocol": "https",
+							"host": [
+								"{{AzureDevops.Host}}"
+							],
+							"path": [
+								"{{AzureDevops.Org}}",
+								"_apis",
+								"tfvc"
+							]
+						},
+						"description": "List all distributedtask APIs in Azure Devops."
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "96ecb165-64b6-4631-9765-78460cfbea66",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "14f1a3a6-d4b0-4635-a9ce-8460c2ad757e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Wiki",
+			"item": [
+				{
+					"name": "API",
+					"request": {
+						"method": "OPTIONS",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/wiki",
+							"protocol": "https",
+							"host": [
+								"{{AzureDevops.Host}}"
+							],
+							"path": [
+								"{{AzureDevops.Org}}",
+								"_apis",
+								"wiki"
+							]
+						},
+						"description": "List all distributedtask APIs in Azure Devops."
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "96ecb165-64b6-4631-9765-78460cfbea66",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "14f1a3a6-d4b0-4635-a9ce-8460c2ad757e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Policy",
+			"item": [
+				{
+					"name": "API",
+					"request": {
+						"method": "OPTIONS",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/policy",
+							"protocol": "https",
+							"host": [
+								"{{AzureDevops.Host}}"
+							],
+							"path": [
+								"{{AzureDevops.Org}}",
+								"_apis",
+								"policy"
+							]
+						},
+						"description": "List all distributedtask APIs in Azure Devops."
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "96ecb165-64b6-4631-9765-78460cfbea66",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "14f1a3a6-d4b0-4635-a9ce-8460c2ad757e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Notification",
+			"item": [
+				{
+					"name": "API",
+					"request": {
+						"method": "OPTIONS",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/notification",
+							"protocol": "https",
+							"host": [
+								"{{AzureDevops.Host}}"
+							],
+							"path": [
+								"{{AzureDevops.Org}}",
+								"_apis",
+								"notification"
+							]
+						},
+						"description": "List all distributedtask APIs in Azure Devops."
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "96ecb165-64b6-4631-9765-78460cfbea66",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "14f1a3a6-d4b0-4635-a9ce-8460c2ad757e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Hooks",
+			"item": [
+				{
+					"name": "API",
+					"request": {
+						"method": "OPTIONS",
+						"header": [
+							{
+								"key": "Accept",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis/hooks",
+							"protocol": "https",
+							"host": [
+								"{{AzureDevops.Host}}"
+							],
+							"path": [
+								"{{AzureDevops.Org}}",
+								"_apis",
+								"hooks"
+							]
+						},
+						"description": "List all distributedtask APIs in Azure Devops."
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "96ecb165-64b6-4631-9765-78460cfbea66",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "14f1a3a6-d4b0-4635-a9ce-8460c2ad757e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "API",
+			"request": {
+				"method": "OPTIONS",
+				"header": [
+					{
+						"key": "Accept",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://{{AzureDevops.Host}}/{{AzureDevops.Org}}/_apis",
+					"protocol": "https",
+					"host": [
+						"{{AzureDevops.Host}}"
+					],
+					"path": [
+						"{{AzureDevops.Org}}",
+						"_apis"
+					]
+				},
+				"description": "List all APIs in Azure Devops."
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "{{AzureDevops.PAT}}",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "user",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "e705bc1e-2fc2-4ff8-8030-863d34685715",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "bd590b12-9b19-45f7-8596-38e8220df5bd",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "3e366f4e-2f47-48ec-b65a-5bbf40c6ec64",
+			"key": "AzureDevops.Host",
+			"value": "dev.azure.com",
+			"type": "string"
+		}
+	]
+}
